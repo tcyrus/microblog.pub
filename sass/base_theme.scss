@@ -1,8 +1,8 @@
 .note-container p:first-child {
-        margin-top: 0;
+  margin-top: 0;
 }
 html, body {
-	  height: 100%;
+  height: 100%;
 }
 
 @media only screen and (max-width: 480px) {
@@ -27,9 +27,9 @@ a, h1, h2, h3, h4, h5, h6 {
 }
 a {
   text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 .gold {
   color: $primary-color;
@@ -40,9 +40,11 @@ a:hover {
 .lcolor {
   color: $color-light;
 }
-.older-link, .newer-link, .older-link:hover, .newer-link:hover {
-  text-decoration: none;
-  padding: 3px;
+.older-link, .newer-link {
+  &:hover {
+    text-decoration: none;
+    padding: 3px;
+  }
 }
 .older-link { float: left }
 .newer-link { float: right }
@@ -54,51 +56,48 @@ a:hover {
   padding: 5px 8px;
   margin-top: 5px;
   border-radius: 2px;
-}
-.remote-follow-button:hover {
-  text-decoration: none;
-  background: $primary-color;
-  color: $background-color;
+  &:hover {
+    text-decoration: none;
+    background: $primary-color;
+    color: $background-color;
+  }
 }
 #admin-menu-wrapper {
   padding: 10px;
-  margin:0 auto;
+  margin: 0 auto;
   width: 100%;
   background: $color-menu-background;
   max-width: 720px;
 
-#admin-menu {
-  list-style-type: none;
-  display: inline;
-  padding: 10px;
-  color: $color-light;
-  border-radius-bottom-left: 2px;
-  border-radius-bottom-right: 2px;
-  .left { float: left; }
-  .right { float: right; }
-  li {
-     a { text-decoration: none; }
-    .admin-title {
-       text-transform: uppercase;
-       font-weight: bold;
-    }
-    padding-right:10px;
-    .selected, a:hover {
-      color: $primary-color;
+  #admin-menu {
+    list-style-type: none;
+    display: inline;
+    padding: 10px;
+    color: $color-light;
+    border-radius-bottom-left: 2px;
+    border-radius-bottom-right: 2px;
+    .left { float: left; }
+    .right { float: right; }
+    li {
+      padding-right: 10px;
+      .selected, a:hover {
+        color: $primary-color;
+      }
+       a { text-decoration: none; }
+      .admin-title {
+        text-transform: uppercase;
+        font-weight: bold;
+      }
     }
   }
 }
-}
 header#header {
   margin-bottom: 70px;
-
   .title {
     font-size: 1.2em;
     padding-right: 15px;
     color: $color-title-link;
-  }
-  .title:hover {
-    text-decoration: none;
+    &:hover { text-decoration: none; }
   }
   .subtitle-username {
     color: $color;
@@ -118,34 +117,24 @@ header#header {
     }
     a {
       padding: 5px 10px;
-        small.badge {
-          background-color: $color-menu-background;
-          color: $color-light;
-          border-radius: 2px;
-          margin-left: 5px;
-          padding: 3px 5px 0px 5px;
-          font-weight: bold;
+      small.badge {
+        background-color: $color-menu-background;
+        color: $color-light;
+        border-radius: 2px;
+        margin-left: 5px;
+        padding: 3px 5px 0 5px;
+        font-weight: bold;
+      }
+      &.selected, &:hover {
+        background: $primary-color;
+        color: $background-color;
+        border-radius: 2px;
+        .badge {
+          color: $primary-color;
+          background: $background-color;
         }
-    }
-    a.selected {
-      background: $primary-color;
-      color: $background-color;
-      border-radius:2px;
-      .badge {
-        color: $primary-color;
-        background: $background-color;
       }
-
-    }
-    a:hover {
-      background: $primary-color;
-      color: $background-color;
-      text-decoration: none;
-      border-radius: 2px;
-      .badge {
-        color: $primary-color;
-        background: $background-color;
-      }
+      &:hover { text-decoration: none; }
     }
   }
 }
@@ -153,10 +142,9 @@ header#header {
   width: 90%;
   max-width: 720px;
   margin: 30px auto;
+  #notes { margin-top: 20px; }
 }
-#container #notes {
-  margin-top: 20px;
-}
+
 .actor-box {
   display: block;
   text-decoration: none;
@@ -164,7 +152,7 @@ header#header {
 
   .actor-icon {
     width: 120px;
-    border-radius:2px;
+    border-radius: 2px;
   }
 
   h3 { margin: 0; }
@@ -180,11 +168,11 @@ header#header {
   text-decoration: none;
 
   .actor-box-wrapper {
-    margin-bottom:40px;
+    margin-bottom: 40px;
 
     .actor-icon {
-      width:120px;
-      border-radius:2px;
+      width: 120px;
+      border-radius: 2px;
     }
 
     h3 { margin: 0; }
@@ -195,15 +183,11 @@ header#header {
 }
 .note {
   display: flex;
-  .l {
-    color: $color-note-link;
-  }
-  
+  .l { color: $color-note-link; }
   .h-card {
     flex: initial;
     width: 50px;
   }
-  
   .u-photo {
     width: 50px;
     border-radius: 2px;
@@ -213,65 +197,60 @@ header#header {
     padding-left: 15px;
     overflow: hidden;
   }
-
-  .bottom-bar { margin-top:10px;display:inline-block; }
-
-  .img-attachment {
-    max-width:100%;
-    border-radius:2px;
+  .bottom-bar {
+    margin-top: 10px;
+    display: inline-block;
   }
-
+  .img-attachment {
+    max-width: 100%;
+    border-radius: 2px;
+  }
   h3 {
     font-size: 1.1em;
     color: $color-light;
   }
-
-  strong { font-weight:600; }
-
+  strong { font-weight: 600; }
   .note-container {
     clear: right;
-    padding:10px 0;
+    padding: 10px 0;
     word-break: normal;
   }
 }
 .color-menu-background {
   background: $color-menu-background;
 }
-.og-link { text-decoration: none; }
-.og-link:hover { text-decoration: none; }
+.og-link {
+  &, &:hover { text-decoration: none; }
+}
 .bar-item-no-hover {
   cursor: default;
   background: $color-menu-background;
   padding: 5px;
   color: $color-light;
-  margin-right:10px;
-  border-radius:2px;
+  margin-right: 10px;
+  border-radius: 2px;
   float: left;
+  &:hover { cursor: default; }
 }
-.bar-item-no-hover:hover {
-  cursor: default;
-}
+
 .bar-item-no-bg {
   cursor: default;
   padding: 5px;
   color: $color-light;
-  margin-right:10px;
-  border-radius:2px;
+  margin-right: 10px;
+  border-radius: 2px;
   float: left;
+  &:hover { cursor: default; }
 }
-.bar-item-no-bg:hover {
-  cursor: default;
-}
+
 .bar-item-pinned {
   cursor: default;
   background: $color-menu-background;
   color: $color-light;
   padding: 5px;
-  margin-right:5px;
-  border-radius:2px;
-}
-.bar-item-pinned:hover {
-  cursor: default;
+  margin-right: 5px;
+  border-radius: 2px;
+  &:hover { cursor: default; }
 }
 .bar-item {
   background: $color-menu-background;
@@ -279,23 +258,25 @@ header#header {
   color: $color-light;
   margin-right: 10px;
   float: left;
-  border-radius:2px;
+  border-radius: 2px;
+  &:hover {
+    background: $primary-color;
+    color: $background-color;
+    text-decoration: none;
+  }
 }
-.bar-item:hover {
-  background: $primary-color;
-  color: $background-color;
-  text-decoration: none;
-}
+
 .bar-item-no-border {
   color: $color-light;
   background: inherit;
   cursor: default;
+  &:hover {
+    color: $color-light;
+    background: inherit;
+    cursor: default;
+  }
 }
-.bar-item-no-border:hover {
-  color: $color-light;
-  background: inherit;
-  cursor: default;
-}
+
 .bar-item-reverse {
   background: $primary-color;
   color: $background-color;
@@ -304,10 +285,10 @@ header#header {
   float: left;
   border-radius:2px;
   border: 0;
-}
-.bar-item-reverse:hover {
-  background: $color-menu-background;
-  color: $color-light;
+  &:hover {
+    background: $color-menu-background;
+    color: $color-light;
+  }
 }
 
 button.bar-item {
@@ -319,31 +300,40 @@ form.action-form {
 .perma {
   font-size: 1.25em;
 }
-.bottom-bar .perma-item {
-  margin-right: 5px;
+.bottom-bar {
+  .perma-item {
+    margin-right: 5px;
+  }
+  a.bar-item:hover {
+    text-decoration: none;
+  }
 }
-.bottom-bar a.bar-item:hover {
-  text-decoration: none;
-}
-.footer > div  {
-  width: 90%;
-  max-width: 720px;
-  margin: 40px auto;
-}
-.footer a, .footer a:hover, .footer a:visited {
-  text-decoration: underline;
-  color: $color;
+.footer {
+  > div  {
+    width: 90%;
+    max-width: 720px;
+    margin: 40px auto;
+  }
+  a {
+    &, &:hover, &:visited {
+      text-decoration: underline;
+      color: $color;
+    }
+  }
 }
 .summary {
   color: $color-summary;
   font-size: 1.1em;
   margin-top: 10px;
   margin-bottom: 30px;
+  a {
+    &, &:hover {
+      color: $color-summary;
+      text-decoration: underline;
+    }
+  }
 }
-.summary a, .summay a:hover {
-  color: $color-summary;
-  text-decoration: underline;
-}
+
 #followers, #following, #new {
   margin-top: 50px;
 }
@@ -351,65 +341,67 @@ form.action-form {
   margin-top: 50px;
 }
 .tabbar {
-    margin-bottom:50px;
+  margin-bottom: 50px;
 }
 .tab {
   padding: 10px;
   text-decoration: none;
-}
-.tab.selected {
-  background: $color-menu-background;
-  color: $primary-color;
-  border-top: 1px solid $primary-color;
-  border-right: 1px solid $primary-color;
-  border-left: 1px solid $primary-color;
-  padding: 9px;
-  
-}
-.tab:hover {
-  text-decoration: none;
-  background: $color-menu-background;
-  color: $color-light;
+  &.selected {
+    background: $color-menu-background;
+    color: $primary-color;
+    border-top: 1px solid $primary-color;
+    border-right: 1px solid $primary-color;
+    border-left: 1px solid $primary-color;
+    padding: 9px;
+  }
+  &:hover {
+    text-decoration: none;
+    background: $color-menu-background;
+    color: $color-light;
+  }
 }
 textarea, input, select {
   background: $color-menu-background;
   padding: 10px;
   color: $color-light;
-  border: 0px;
+  border: 0;
   border-radius: 2px;
 }
 select {
-    padding: 4px 10px;
+  padding: 4px 10px;
 }
 input {
   padding: 10px;
+  &[type=submit] {
+    color: $primary-color;
+    text-transform: uppercase;
+  }
 }
-input[type=submit] {
-  color: $primary-color;
-  text-transform: uppercase;
-}
+
 .note-video {
   margin: 30px 0 10px 0;
 }
 li.answer {
-  height:30px;
-  margin-bottom:10px;
-  position:relative;
+  height: 30px;
+  margin-bottom: 10px;
+  position: relative;
 }
-.answer .answer-bar {
-  position:absolute;
-  height:30px;
-  border-radius:2px;
-}
-.answer .answer-text {
-  position:relative;
-  top:6px;
-  padding-left:10px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.answer .answer-text > span {
-   width:70px;
-   display:inline-block;
+.answer {
+  .answer-bar {
+    position: absolute;
+    height: 30px;
+    border-radius: 2px;
+  }
+  .answer-text {
+    position: relative;
+    top: 6px;
+    padding-left: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    > span {
+      width: 70px;
+      display: inline-block;
+    }
+  }
 }
